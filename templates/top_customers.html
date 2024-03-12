@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{%block title%}Top 10 {%endblock%}
+
+{%block content%}
+
+<ul>
+    {% for customer in customers %}
+    <li><a href="/{{ customer.id }}/">{{ customer.fullName }} {{customer.reservations}}</a></li>
+    {% endfor %}
+</ul>
+
+{%endblock%}

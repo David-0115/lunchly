@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}
+Search results
+{%endblock%}
+
+{%block content%}
+{%if result.length == 0 %}
+<p>No results found.</p>
+{%else%}
+<p>Search results:</p>
+<ul style="column-count: 4">
+    {%for customer in result%}
+    <li><a href="/{{ customer.id }}/">{{ customer.fullName }}</a></li>
+    {%endfor%}
+</ul>
+{%endif%}
+{%endblock%}
